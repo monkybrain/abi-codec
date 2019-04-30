@@ -1,0 +1,15 @@
+{
+  "name": "abi-codec",
+  "version": "0.0.1",
+  "description": "Encodes and decodes Ethereum Contract ABI",
+  "main": "index.js",
+  "author": "monkybrain",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/monkybrain/abi-codec"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "web3-eth-abi": "^1.0.0-beta.53"
+  }
+}
