@@ -37,5 +37,3 @@ exports.decodeOutput = (contractABI, method, output) => {
   return codec.decodeParameters(methodABI.outputs, output)
 
 }
-
-module.exports = { encodeInput, decodeOutput }

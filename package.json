@@ -1,6 +1,6 @@
 {
   "name": "abi-codec",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Encodes and decodes Ethereum Contract ABI",
   "main": "index.js",
   "author": "monkybrain",
