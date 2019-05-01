@@ -1,6 +1,6 @@
 {
   "name": "abi-codec",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Ethereum Contract ABI codec. Encodes function input and output according to provided contract ABI.",
   "main": "index.js",
   "author": "monkybrain",

@@ -2,23 +2,7 @@ const { AbiCoder } = require('web3-eth-abi')
 
 const codec = new AbiCoder()
 
-/* PRIVATE */
-const getMethodABI = (contractABI, method) => {
-  
-  // Find method by name
-  const methodABI = contractABI.find(x => x.name === method)
-  
-  // If not found -> throw error
-  if (methodABI === undefined) {
-    throw new Error(`Invalid method name: '${name}'`)
-  }
-  
-  // Return method ABI
-  return methodABI
-  
-}
-
-/* PUBLIC */
+/*** PUBLIC ***/
 exports.encodeInput = (contractABI, method, params) => {
   
   // Get method ABI
@@ -29,11 +13,28 @@ exports.encodeInput = (contractABI, method, params) => {
 }
 
 exports.decodeOutput = (contractABI, method, output) => {
-
+  
   // Get method ABI
   const methodABI = getMethodABI(contractABI, method) 
+  
+  // Get, downcase and return output(s)
+  const outputs = codec.decodeParameters(methodABI.outputs, output)
+  return outputs.map( (output) => output.toLowerCase() )
+    
+}
 
-  // Return decoded output
-  return codec.decodeParameters(methodABI.outputs, output)
-
+/*** PRIVATE ***/
+const getMethodABI = (contractABI, method) => {
+  
+  // Find method by name
+  const methodABI = contractABI.find(x => x.name === method)
+  
+  // If not found -> throw error
+  if (methodABI === undefined) {
+    throw new Error(`Invalid method name: '${method}'`)
+  }
+  
+  // Return method ABI
+  return methodABI
+  
 }
