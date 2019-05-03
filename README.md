@@ -32,7 +32,7 @@ yarn add abi-codec
 - output - `String`: Bytes to decode
 
 #### Returns
-- `String`: Decoded output
+- `Array`: Decoded output
 
 ## Usage
 ```javascript
@@ -64,7 +64,7 @@ jsonInterface = [
 // Encode input for JSON RPC method `eth_call`
 const namehash = '0x78c5b99cf4668cf6da387866de4331c78b75b7db0087988c552f73e1714447b9' // 32 byte name hash for 'ethereum.eth'
 encodeInput(jsonInterface, 'resolver', [namehash])
-// -> 0x0178b8bf78c5b99cf4668cf6da387866de4331c78b75b7db0087988c552f73e1714447b9
+// -> '0x0178b8bf78c5b99cf4668cf6da387866de4331c78b75b7db0087988c552f73e1714447b9'
 
 // Decode output from JSON RPC method `eth_call`
 const output = '0x0178b8bf78c5b99cf4668cf6da387866de4331c78b75b7db0087988c552f73e1714447b9'
