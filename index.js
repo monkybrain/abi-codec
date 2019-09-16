@@ -17,7 +17,6 @@ exports.decodeOutput = (contractABI, method, output) => {
 
   // Get, downcase and return output(s)
   const outputsObject = AbiCoder.decodeParameters(methodABI.outputs, output)
-  console.log(outputsObject)
   let outputs = []
   for (let i = 0; i < outputsObject.__length__; i++) {
     outputs.push(outputsObject[i])
