@@ -16,9 +16,14 @@ exports.decodeOutput = (contractABI, method, output) => {
   const methodABI = getMethodABI(contractABI, method)
 
   // Get, downcase and return output(s)
-  const outputs = AbiCoder.decodeParameters(methodABI.outputs, output)
-  return outputs.map( (output) => output.toLowerCase() )
+  const outputsObject = AbiCoder.decodeParameters(methodABI.outputs, output)
+  console.log(outputsObject)
+  let outputs = []
+  for (let i = 0; i < outputsObject.__length__; i++) {
+    outputs.push(outputsObject[i])
+  }
 
+  return outputs
 }
 
 /*** PRIVATE ***/
@@ -36,26 +41,3 @@ const getMethodABI = (contractABI, method) => {
   return methodABI
 
 }
-
-jsonInterface = [
-  {
-    "constant": true,
-    "inputs": [
-      {
-        "name": "node",
-        "type": "bytes32"
-      }
-    ],
-    "name": "resolver",
-    "outputs": [
-      {
-        "name": "",
-        "type": "address"
-      }
-    ]
-  }
-]
-
-// Encode input for JSON RPC method `eth_call`
-const namehash = '0x78c5b99cf4668cf6da387866de4331c78b75b7db0087988c552f73e1714447b9' // 32 byte name hash for 'ethereum.eth'
-console.log(exports.encodeInput(jsonInterface, 'resolver', [namehash]))

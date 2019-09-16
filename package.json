@@ -1,6 +1,6 @@
 {
   "name": "abi-codec",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "Ethereum Contract ABI codec. Encodes function input and output according to provided contract ABI.",
   "main": "index.js",
   "author": "monkybrain",
@@ -11,6 +11,9 @@
   "license": "MIT",
   "dependencies": {
     "web3-eth-abi": "1.2.1"
+  },
+  "devDependencies": {
+    "jest": "24.9.0"
   },
   "keywords": [
     "ethereum",
