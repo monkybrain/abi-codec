@@ -10,10 +10,15 @@
   },
   "license": "MIT",
   "dependencies": {
-    "web3-eth-abi": "^1.0.0-beta.53"
+    "web3-eth-abi": "1.2.1"
   },
   "keywords": [
-    "ethereum", "abi", "contract",
-    "encode", "decode", "encoder", "decoder"
+    "ethereum",
+    "abi",
+    "contract",
+    "encode",
+    "decode",
+    "encoder",
+    "decoder"
   ]
 }
