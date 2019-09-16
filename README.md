@@ -39,17 +39,17 @@ yarn add abi-codec
 
 // Example using an abbreviated JSON interface for the ENS registrar contract
 
-const codec = require('abi-codec')
+const { encodeInput, decodeOutput } = require('abi-codec')
 
-jsonInterface = [
+const jsonInterface = [
   {
-    "constant": true
+    "constant": true,
     "inputs": [
       {
         "name": "node",
         "type": "bytes32"
       }
-    ]
+    ],
     "name": "resolver",
     "outputs": [
       {
